@@ -1,0 +1,13 @@
+# Ignore the generated source code.
+frdm-keo2z40m/generated
+desktop/generated
+
+# Ignore build results
+frdm-keo2z40m/Debug
+frdm-keo2z40m/Release
+
+# Ignore the python virtualenv folder
+desktop/venv
+
+# Ignore the pycharm project folder.
+desktop/.idea
