@@ -34,14 +34,15 @@
 
 # Setup the submodule embedded proto
 cd EmbeddedProto
-sh setup.sh
+./setup.sh
 cd ..
 
 # Setup the virtual envirounment for the desktop Python script.
 cd desktop
-#python3 -m venv venv
-virtualenv venv
-.\venv\Scripts\activate
+python3 -m venv venv
+#virtualenv venv
+#./venv/Scripts/activate
+source venv/bin/activate
 pip install -r requirements.txt
 cd ..
 
