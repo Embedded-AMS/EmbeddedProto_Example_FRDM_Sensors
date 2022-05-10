@@ -58,14 +58,25 @@ bool UartReadBuffer::peek(uint8_t& byte) const
   return return_value;
 }
 
-void UartReadBuffer::advance()
+bool UartReadBuffer::advance()
 {
-  ++read_index_;
+  const bool return_value = write_index_ > read_index_;
+  if(return_value)
+  {
+	  ++read_index_;
+  }
+  return return_value;
 }
 
-void UartReadBuffer::advance(const uint32_t N)
+bool UartReadBuffer::advance(const uint32_t N)
 {
-  read_index_ += N;
+  const auto new_index = read_index_ + N;
+  const bool return_value = write_index_ > new_index;
+  if(return_value)
+  {
+	read_index_ = new_index;
+  }
+  return return_value;
 }
 
 bool UartReadBuffer::pop(uint8_t& byte)
