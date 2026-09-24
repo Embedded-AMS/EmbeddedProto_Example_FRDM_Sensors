@@ -32,7 +32,7 @@
 #define INC_UARTREADBUFFER_H_
 
 #include <cstdint>
-#include <ReadBufferInterface.h>
+#include <EmbeddedProto/ReadBufferInterface.h>
 
 class UartReadBuffer : public ::EmbeddedProto::ReadBufferInterface
 {
@@ -41,7 +41,7 @@ class UartReadBuffer : public ::EmbeddedProto::ReadBufferInterface
 
   public:
     UartReadBuffer();
-    ~UartReadBuffer() override = default;
+    ~UartReadBuffer() = default;
 
     /** \see ::EmbeddedProto::ReadBufferInterface::get_size() */
     uint32_t get_size() const override;
@@ -51,6 +51,9 @@ class UartReadBuffer : public ::EmbeddedProto::ReadBufferInterface
 
     /** \see ::EmbeddedProto::ReadBufferInterface::peak() */
     bool peek(uint8_t& byte) const override;
+
+    /** \see ::EmbeddedProto::ReadBufferInterface::peek(const uint32_t n_bytes, uint8_t& byte) */
+    bool peek(const uint32_t n_bytes, uint8_t& byte) const override;
 
     /** \see ::EmbeddedProto::ReadBufferInterface::advance() */
     bool advance() override;

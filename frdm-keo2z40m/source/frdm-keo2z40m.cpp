@@ -46,7 +46,7 @@
 #include "uart_messages.h"
 #include "UartReadBuffer.h"
 #include "UartWriteBuffer.h"
-#include <Errors.h>
+#include <EmbeddedProto/Errors.h>
 
 /* TODO: insert other definitions and declarations here. */
 #define ACCEL_I2C_CLK_SRC  kCLOCK_BusClk
