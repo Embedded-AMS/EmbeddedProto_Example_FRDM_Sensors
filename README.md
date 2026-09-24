@@ -2,7 +2,7 @@
 ![alt text](https://embeddedproto.com/wp-content/uploads/2020/03/Embedded-Proto-e1583834233386.png "Embedded Proto Logo")
 
 
-Copyrights 2020-2021 Embedded AMS B.V. Amsterdam, [www.EmbeddedAMS.nl](https://www.EmbeddedAMS.nl), [info@EmbeddedAMS.nl](mailto:info@EmbeddedAMS.nl)
+Copyrights 2020-2026 Embedded AMS B.V. Hoorn, [www.EmbeddedAMS.nl](https://www.EmbeddedAMS.nl), [info@EmbeddedAMS.nl](mailto:info@EmbeddedAMS.nl)
 
 
 Looking for a more elaborate description of this example? Please visit: https://embeddedproto.com/sensor-example-with-embedded-proto/
@@ -25,12 +25,14 @@ You can send the following commands:
 
 # Installation
 
-1. Install MCUXpresso if you have not already.
-2. Install the dependencies required by Embedded Proto. They are listed [here](https://github.com/Embedded-AMS/EmbeddedProto).
-3. Checkout this example repository including the submodule of Embedded Proto: `git clone --recursive https://github.com/Embedded-AMS/EmbeddedProto_Example_FRDM_sensors.git`.
+1. Install MCUXpresso IDE if you have not already. The project was last built with version 11.10.0.
+2. Install Python 3.11 or newer, the only dependency of Embedded Proto. See the [installation instructions](https://embeddedproto.com/documentation/installation/).
+3. Checkout this example repository including the submodule of Embedded Proto: `git clone --recursive https://github.com/Embedded-AMS/EmbeddedProto_Example_FRDM_Sensors.git`.
 4. Setup the environment required for Embedded Proto and the desktop script by running the setup script: `./setup.sh` on Linux or `.\setup.bat` on Windows.
 
-The setup script already does it for you but you can regenerate the source code using the `./generate_source_files.sh` or `.\generate_source_files.bat` script. This is required when you have changed the \*.proto file.
+The setup script runs the install script of Embedded Proto, which creates a virtual environment in the submodule folder, and generates the source code for both the microcontroller and the desktop script with the `embeddedproto` command. You can regenerate the source code using the `./generate_source_files.sh` or `.\generate_source_files.bat` script. This is required when you have changed the \*.proto file.
+
+The Embedded Proto library is header only and requires C++17. The project has the C++ language standard set to GNU++17. The `-ffreestanding` flag that MCUXpresso adds to C++ builds by default has been removed, because the C++ standard headers of GCC 13 and newer are not available in freestanding mode.
 
 
 # Running the code
