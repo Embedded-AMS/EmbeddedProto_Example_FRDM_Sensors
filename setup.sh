@@ -1,7 +1,7 @@
 #! /bin/bash
 
 #
-# Copyright (C) 2020-2021 Embedded AMS B.V. - All Rights Reserved
+# Copyright (C) 2020-2026 Embedded AMS B.V. - All Rights Reserved
 #
 # This file is part of Embedded Proto.
 #
@@ -34,7 +34,7 @@
 
 # Setup the submodule embedded proto
 cd EmbeddedProto
-./setup.sh
+python3 install.py
 cd ..
 
 # Setup the virtual envirounment for the desktop Python script.

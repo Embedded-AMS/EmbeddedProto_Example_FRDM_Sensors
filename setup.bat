@@ -1,5 +1,5 @@
 ::
-:: Copyright (C) 2020-2021 Embedded AMS B.V. - All Rights Reserved
+:: Copyright (C) 2020-2026 Embedded AMS B.V. - All Rights Reserved
 ::
 :: This file is part of Embedded Proto.
 ::
@@ -32,7 +32,7 @@
 
 :: Setup the submodule embedded proto
 cd EmbeddedProto
-call setup.bat
+python install.py
 cd ..
 
 :: Setup the virtual environment for the desktop Python script.
